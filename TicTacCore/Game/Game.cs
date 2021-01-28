@@ -23,7 +23,7 @@ namespace TicTacToeServer.Game
 
         public Game(WebSocketClient masterPlayer)
         {
-            Uuid = Guid.NewGuid().ToString();
+            Uuid = GameManager.RandomString(7);
 
             _board = new BoardType[3,3]
             {
