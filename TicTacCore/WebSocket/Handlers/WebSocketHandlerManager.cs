@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicTacCore.WebSocket.Handlers.Incoming;
 using TicTacToeServer.WebSocket.Handlers.Incoming;
 using TicTacToeServer.WebSocket.Utilities;
 
@@ -26,6 +27,10 @@ namespace TicTacToeServer.WebSocket.Handlers
 
             _incomingEvents.Add(new NewGameHandler());
             _incomingEvents.Add(new JoinGameHandler());
+
+            _incomingEvents.Add(new ModifyNicknameHandler());
+
+            _incomingEvents.Add(new SendMessageHandler());
         }
 
         public IncomingEvent GetIncomingEventHandler(string identifier)

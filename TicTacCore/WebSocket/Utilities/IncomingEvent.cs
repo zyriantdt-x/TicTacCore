@@ -9,7 +9,6 @@ namespace TicTacToeServer.WebSocket.Utilities
     public interface IncomingEvent
     {
         string Identifier { get; }
-        IncomingEventType Type { get; }
         void Execute(WebSocketClient SocketClient, MessageObject Data);
     }
     public enum IncomingEventType
