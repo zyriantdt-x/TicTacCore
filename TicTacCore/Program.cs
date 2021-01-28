@@ -11,6 +11,7 @@ namespace TicTacCore
         private static bool IsRunning = true;
         static void Main(string[] args)
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             XmlDocument log4netConfig = new XmlDocument();
             log4netConfig.Load(File.OpenRead("log4net.config"));
             log4net.Config.XmlConfigurator.Configure(log4netConfig["log4net"]);
