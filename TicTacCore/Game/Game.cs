@@ -67,19 +67,19 @@ namespace TicTacToeServer.Game
         {
             var ArrayHandler = new ArrayHandling<BoardType>();
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i <= 2; i++)
             {
                 var array = ArrayHandler.GetRow(_board, i);
                 var item = array.FirstOrDefault();
-                bool match = array.All(x => x == item && x != BoardType.UNFILLED);
+                bool match = array.Skip(1).All(x => x == item && x != BoardType.UNFILLED);
                 if (match) return true;
             }
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i <= 2; i++)
             {
                 var array = ArrayHandler.GetColumn(_board, i);
                 var item = array.FirstOrDefault();
-                bool match = array.All(x => x == item && x != BoardType.UNFILLED);
+                bool match = array.Skip(1).All(x => x == item && x != BoardType.UNFILLED);
                 if (match) return true;
             }
 
