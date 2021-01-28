@@ -17,6 +17,7 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
         public void Execute(WebSocketClient SocketClient, MessageObject Data) // GameId
         {
             var gameId = Convert.ToString(Data.Body["uuid"]);
+            var nickname = Convert.ToString(Data.Body["nickname"]);
             var gameObject = GameEnvironment.GetGameManager().GetGame(gameId);
             if (gameObject == null)
             {

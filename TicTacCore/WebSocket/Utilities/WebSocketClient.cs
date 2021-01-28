@@ -14,7 +14,7 @@ namespace TicTacToeServer.WebSocket.Utilities
         public IWebSocketConnection WebSocketConnection { get; set; }
         public Game.Game Game { get; private set; }
 
-        public string Username { get; }
+        public string Nickname { get; set; }
         public WebSocketClient(string Uuid, IWebSocketConnection Socket)
         {
             this.Uuid = Uuid;
