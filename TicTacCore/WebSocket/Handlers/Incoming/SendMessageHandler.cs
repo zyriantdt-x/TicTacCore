@@ -22,6 +22,12 @@ namespace TicTacCore.WebSocket.Handlers.Incoming
                 return;
             }
 
+            if (!SocketClient.Game.HasStarted)
+            {
+                SocketClient.Send(new ErrorHandler("Game hasn't started"));
+                return;
+            }
+
             SocketClient.Game.SendToPlayers(new ReceiveMessageHandler(SocketClient.Nickname, message, DateTime.Now.ToString("HH:mm:ss")));
         }
     }
