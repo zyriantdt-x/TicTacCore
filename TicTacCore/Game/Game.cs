@@ -83,9 +83,8 @@ namespace TicTacToeServer.Game
                 if (match) return true;
             }
 
-            if (_board[0, 0] == BoardType.UNFILLED || _board[0, 2] == BoardType.UNFILLED) return false;
-            if (_board[0, 0] == _board[1, 1] && _board[1, 1] == _board[2, 2]) return true;
-            if (_board[0, 2] == _board[1, 1] && _board[1, 1] == _board[2, 0]) return true;
+            if (_board[0, 0] != BoardType.UNFILLED && _board[0, 0] == _board[1, 1] && _board[1, 1] == _board[2, 2]) return true;
+            if (_board[0, 2] != BoardType.UNFILLED && _board[0, 2] == _board[1, 1] && _board[1, 1] == _board[2, 0]) return true;
 
 
             return false;
