@@ -40,7 +40,7 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
 
                     if (SocketClient.Game.CheckForWin())
                     {
-                        SocketClient.Game.SendToPlayers(new PlayerWonHandler(SocketClient.Uuid, (SocketClient.Game.MasterPlayer.Uuid == SocketClient.Uuid ? "Master" : "Slave")));
+                        SocketClient.Game.SendToPlayers(new PlayerWonHandler(SocketClient.Uuid, SocketClient.Nickname));
                         SocketClient.Game.Dispose();
                         return;
                     }
