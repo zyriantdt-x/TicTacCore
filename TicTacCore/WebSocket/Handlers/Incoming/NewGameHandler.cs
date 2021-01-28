@@ -17,7 +17,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
         public void Execute(WebSocketClient SocketClient, MessageObject Data)
         {
             var gameObject = GameEnvironment.GetGameManager().CreateGame(SocketClient);
-            var nickname = Convert.ToString(Data.Body["nickname"]);
             if (!SocketClient.SetGame(gameObject))
             {
                 SocketClient.Send(new ErrorHandler("Already in game"));
