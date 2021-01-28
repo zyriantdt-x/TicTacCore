@@ -17,7 +17,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
         public void Execute(WebSocketClient SocketClient, MessageObject Data) // GameId
         {
             var gameId = Convert.ToString(Data.Body["uuid"]);
-            var nickname = Convert.ToString(Data.Body["nickname"]);
 
             var gameObject = GameEnvironment.GetGameManager().GetGame(gameId);
             if (gameObject == null)
@@ -33,7 +32,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
             }
 
             SocketClient.SetGame(gameObject);
-            SocketClient.Nickname = nickname;
             SocketClient.Send(new EstablishNewGameHandler(gameObject));
             SocketClient.Send(new UpdateBoardHandler(gameObject));
             gameObject.MasterPlayer.Send(new PlayerJoinedHandler(SocketClient.Uuid));

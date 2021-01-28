@@ -19,6 +19,7 @@ namespace TicTacToeServer.WebSocket.Utilities
         {
             this.Uuid = Uuid;
             this.WebSocketConnection = Socket;
+            this.Nickname = "Player";
         }
 
         public void Send(OutgoingEvent Event)

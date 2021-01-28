@@ -24,7 +24,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
                 return;
             }
 
-            SocketClient.Nickname = nickname;
             SocketClient.Send(new EstablishNewGameHandler(gameObject));
             SocketClient.Send(new UpdateBoardHandler(gameObject));
         }
