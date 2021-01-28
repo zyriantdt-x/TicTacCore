@@ -71,7 +71,7 @@ namespace TicTacToeServer.Game
             {
                 var array = ArrayHandler.GetRow(_board, i);
                 var item = array.FirstOrDefault();
-                bool match = array.Skip(1).All(x => x == item && x != BoardType.UNFILLED);
+                bool match = array.All(x => x == item && x != BoardType.UNFILLED);
                 if (match) return true;
             }
 
@@ -79,7 +79,7 @@ namespace TicTacToeServer.Game
             {
                 var array = ArrayHandler.GetColumn(_board, i);
                 var item = array.FirstOrDefault();
-                bool match = array.Skip(1).All(x => x == item && x != BoardType.UNFILLED);
+                bool match = array.All(x => x == item && x != BoardType.UNFILLED);
                 if (match) return true;
             }
 
