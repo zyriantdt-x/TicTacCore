@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicTacCore.WebSocket.Handlers.Outgoing;
 using TicTacToeServer.WebSocket.Handlers.Outgoing;
 using TicTacToeServer.WebSocket.Utilities;
 
@@ -21,7 +22,7 @@ namespace TicTacCore.WebSocket.Handlers.Incoming
                 return;
             }
 
-
+            SocketClient.Game.SendToPlayers(new ReceiveMessageHandler(SocketClient.Nickname, message, DateTime.Now.ToString("HH:mm:ss")));
         }
     }
 }
