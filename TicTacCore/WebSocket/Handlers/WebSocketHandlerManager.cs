@@ -29,6 +29,8 @@ namespace TicTacToeServer.WebSocket.Handlers
             _incomingEvents.Add(new JoinGameHandler());
 
             _incomingEvents.Add(new ModifyNicknameHandler());
+
+            _incomingEvents.Add(new SendMessageHandler());
         }
 
         public IncomingEvent GetIncomingEventHandler(string identifier)
