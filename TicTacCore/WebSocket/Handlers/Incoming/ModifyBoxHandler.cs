@@ -14,8 +14,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
     {
         public string Identifier => "MODIFY_BOX";
 
-        public IncomingEventType Type => IncomingEventType.NOT_HANDSHAKE;
-
         public void Execute(WebSocketClient SocketClient, MessageObject Data) // X, Y
         {
             var location = new Vector2(Convert.ToInt32(Data.Body["x"]), Convert.ToInt32(Data.Body["y"]));
