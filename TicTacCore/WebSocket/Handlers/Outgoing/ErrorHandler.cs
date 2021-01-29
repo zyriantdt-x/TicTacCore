@@ -13,6 +13,7 @@ namespace TicTacToeServer.WebSocket.Handlers.Outgoing
             : base("ERROR")
         {
             AppendObject("message", Error);
+            AppendObject("time", DateTime.Now.ToString("HH::mm:ss"));
         }
     }
 }
