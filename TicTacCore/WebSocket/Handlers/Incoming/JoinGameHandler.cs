@@ -12,8 +12,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
     {
         public string Identifier => "JOIN_GAME";
 
-        public IncomingEventType Type => IncomingEventType.NOT_HANDSHAKE;
-
         public void Execute(WebSocketClient SocketClient, MessageObject Data) // GameId
         {
             var gameId = Convert.ToString(Data.Body["uuid"]);
