@@ -12,8 +12,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
     {
         public string Identifier => "NEW_GAME";
 
-        public IncomingEventType Type => IncomingEventType.NOT_HANDSHAKE;
-
         public void Execute(WebSocketClient SocketClient, MessageObject Data)
         {
             var gameObject = GameEnvironment.GetGameManager().CreateGame(SocketClient);

@@ -11,8 +11,6 @@ namespace TicTacCore.WebSocket.Handlers.Incoming
     {
         public string Identifier => "MODIFY_NICKNAME";
 
-        public IncomingEventType Type => IncomingEventType.NOT_HANDSHAKE;
-
         public void Execute(WebSocketClient SocketClient, MessageObject Data)
         {
             SocketClient.Nickname = Convert.ToString(Data.Body["nickname"]);

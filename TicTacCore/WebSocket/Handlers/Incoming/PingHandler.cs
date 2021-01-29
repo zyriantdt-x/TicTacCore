@@ -12,8 +12,6 @@ namespace TicTacToeServer.WebSocket.Handlers.Incoming
     {
         public string Identifier => "PING";
 
-        public IncomingEventType Type => IncomingEventType.NOT_HANDSHAKE;
-
         public void Execute(WebSocketClient SocketClient, MessageObject Data)
         {
             SocketClient.Send(new PongHandler());
