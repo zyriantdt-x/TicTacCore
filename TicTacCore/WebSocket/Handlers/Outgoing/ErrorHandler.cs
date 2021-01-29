@@ -9,10 +9,10 @@ namespace TicTacToeServer.WebSocket.Handlers.Outgoing
 {
     public class ErrorHandler : OutgoingEvent
     {
-        public ErrorHandler(string Error)
+        public ErrorHandler(string error)
             : base("ERROR")
         {
-            AppendObject("message", Error);
+            AppendObject("message", error);
             AppendObject("time", DateTime.Now.ToString("HH::mm:ss"));
         }
     }
