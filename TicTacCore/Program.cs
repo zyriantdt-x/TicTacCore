@@ -20,11 +20,11 @@ namespace TicTacCore
             while (IsRunning)
             {
                 #region Console Commands
-                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
+                /*if (Console.ReadKey(true).Key == ConsoleKey.Enter)
                 {
                     Console.Write("TTT > ");
                     ConsoleCommandHandler.Invoke(Console.ReadLine());
-                }
+                }*/
                 #endregion
             }
         }

@@ -9,7 +9,7 @@ namespace TicTacToeServer.Core
 {
     public static class ConsoleCommandHandler
     {
-        private static readonly ILog log =
+        /*private static readonly ILog log =
             LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public static void Invoke(string input)
@@ -63,6 +63,6 @@ namespace TicTacToeServer.Core
             {
                 log.Error(e);
             }
-        }
+        }*/
     }
 }
